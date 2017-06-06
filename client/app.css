@@ -1,0 +1,43 @@
+a {
+    cursor: pointer;
+}
+
+.help-block {
+    font-size: 12px;
+}
+
+
+.container-class{
+    padding:40px;background:#00c89d
+}
+
+.inside-form{
+    padding:40px;
+    background:#eeeef1;
+    border-radius:12px
+}
+
+.login-button{
+    width:300px;
+    background:#00c89d
+}
+
+.registration-link{
+    color:grey
+}
+
+
+.registration-button{
+    width:285px;
+    background:#00c89d
+}
+
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:100px;
+    background:#ccc;
+}
