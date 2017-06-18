@@ -1,7 +1,8 @@
-﻿import { NgModule } from '@angular/core';
+﻿import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,FormControl,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
@@ -15,13 +16,19 @@ import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { HeaderComponent } from './header/header';
 import { FooterComponent } from './footer/footer';
+import { SearchLocationComponent } from './searchLocation/searchLocation';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpModule,
-        routing
+        routing,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyDWGiaNqmGsVs9Zp1WRTRn4Jldjt_AT1d0',
+            libraries: ["places"]
+        }),
     ],
     declarations: [
         AppComponent,
@@ -30,7 +37,8 @@ import { FooterComponent } from './footer/footer';
         LoginComponent,
         RegisterComponent,
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        SearchLocationComponent
     ],
     providers: [
         AppConfig,
@@ -41,5 +49,6 @@ import { FooterComponent } from './footer/footer';
     ],
     bootstrap: [AppComponent]
 })
+
 
 export class AppModule { }

@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+var core_2 = require("angular2-google-maps/core");
 var app_component_1 = require("./app.component");
 var app_routing_1 = require("./app.routing");
 var app_config_1 = require("./app.config");
@@ -21,6 +22,7 @@ var index_5 = require("./login/index");
 var index_6 = require("./register/index");
 var header_1 = require("./header/header");
 var footer_1 = require("./footer/footer");
+var searchLocation_1 = require("./searchLocation/searchLocation");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,8 +33,13 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
+            forms_1.ReactiveFormsModule,
             http_1.HttpModule,
-            app_routing_1.routing
+            app_routing_1.routing,
+            core_2.AgmCoreModule.forRoot({
+                apiKey: 'AIzaSyDWGiaNqmGsVs9Zp1WRTRn4Jldjt_AT1d0',
+                libraries: ["places"]
+            }),
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -41,7 +48,8 @@ AppModule = __decorate([
             index_5.LoginComponent,
             index_6.RegisterComponent,
             header_1.HeaderComponent,
-            footer_1.FooterComponent
+            footer_1.FooterComponent,
+            searchLocation_1.SearchLocationComponent
         ],
         providers: [
             app_config_1.AppConfig,
