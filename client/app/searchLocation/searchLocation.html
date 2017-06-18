@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+<h1 class="text-center">Search Location</h1>
+<!--<div class="col-md-6">
+    <sebm-google-map [latitude]="lat" [longitude]="lng">
+        <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+    </sebm-google-map>
+</div>-->
+<div class="container">
+    <!--<h1>Angular 2 + Google Maps Places Autocomplete</h1>-->
+    <div class="row">
+        <div class="col-md-6">
+            <sebm-google-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+                <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude"></sebm-google-map-marker>
+            </sebm-google-map>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <h3><b>Enter the Location you want to search</b></h3>
+                        <input id="auto" placeholder="search for location" autocorrect="off" (change)="saveSearch()" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+                    </div>
+                </div>
+                <div class="col-md-12" *ngIf="locationData">
+                    <div class="row" *ngFor="let location of locationData.address_components">
+                        <div class="col-md-6">
+                            <h5> <b>{{location.types[0]|uppercase}}</b>
+                            </h5>
+                        </div>
+                        <div class="col-md-6">
+                            <h5> {{location.long_name}}</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5> <b> FULL ADDRESS</b></h5>
+                        </div>
+                        <div class="col-md-6">
+                            <h5> {{locationData.formatted_address}}</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5> <b> LATITUDE</b></h5>
+                        </div>
+                        <div class="col-md-6">
+                            <h5> {{locationData.geometry.location.lat()}}</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5> <b>  LONGITUDE </b></h5>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>{{locationData.geometry.location.lng()}}</h5>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" *ngIf="!locationData">
+                    No Location Selected
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<!--<div class="row">
+    <div class="col-md-6">
+        <sebm-google-map [latitude]="lat" [longitude]="lng">
+            <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+        </sebm-google-map>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <h4>Enter the Location you want to search</h4>
+            <div class="form-group">
+            </div>
+        </div>
+        <div id="map"></div>
+        <div class="row">
+            <div class="col-md-6">Hello</div>
+            <div class="col-md-6">Hello</div>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <h1>Angular 2 + Google Maps Places Autocomplete</h1>
+    <div class="form-group">
+        <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+    </div>
+    <sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+        <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude"></sebm-google-map-marker>
+    </sebm-google-map>
+</div>-->
+<app-footer class="row footer"></app-footer>
