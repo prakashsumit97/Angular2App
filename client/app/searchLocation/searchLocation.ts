@@ -2,6 +2,7 @@ import { Component, NgZone, OnInit, ViewChild, ElementRef } from '@angular/core'
 import { Router } from '@angular/router';
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AgmCoreModule, MapsAPILoader } from 'angular2-google-maps/core';
+import { AlertService, UserService, LocationService } from '../_services/index';
 
 
 @Component({
@@ -24,12 +25,27 @@ export class SearchLocationComponent implements OnInit {
   constructor(
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
-    public searchElementRef: ElementRef
+    public searchElementRef: ElementRef,
+    private router: Router,
+    private userService: UserService,
+    private alertService: AlertService,
+     private locationService: LocationService
   ) { }
 
+
+
+
   saveSearch() {
-console.log('hello');  
-}
+    this.locationService.saveLocation(this.locationData)
+      .subscribe(
+      data => {
+       //this.alertService.success('Registration successful', true);
+        //this.router.navigate(['/login']);
+      },
+      error => {
+        //this.alertService.error(error._body);
+      });
+  }
 
   ngOnInit() {
     //set google maps defaults

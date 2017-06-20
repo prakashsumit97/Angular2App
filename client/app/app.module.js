@@ -22,6 +22,7 @@ var index_5 = require("./login/index");
 var index_6 = require("./register/index");
 var header_1 = require("./header/header");
 var footer_1 = require("./footer/footer");
+var allLocation_1 = require("./allLocation/allLocation");
 var searchLocation_1 = require("./searchLocation/searchLocation");
 var AppModule = (function () {
     function AppModule() {
@@ -49,14 +50,16 @@ AppModule = __decorate([
             index_6.RegisterComponent,
             header_1.HeaderComponent,
             footer_1.FooterComponent,
-            searchLocation_1.SearchLocationComponent
+            searchLocation_1.SearchLocationComponent,
+            allLocation_1.AllLocationComponent
         ],
         providers: [
             app_config_1.AppConfig,
             index_2.AuthGuard,
             index_3.AlertService,
             index_3.AuthenticationService,
-            index_3.UserService
+            index_3.UserService,
+            index_3.LocationService
         ],
         bootstrap: [app_component_1.AppComponent]
     })

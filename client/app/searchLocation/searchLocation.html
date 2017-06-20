@@ -19,7 +19,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <h3><b>Enter the Location you want to search</b></h3>
-                        <input id="auto" placeholder="search for location" autocorrect="off" (change)="saveSearch()" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+                        <input id="auto" placeholder="search for location" autocorrect="off" (change)="saveSearch(location)" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
                     </div>
                 </div>
                 <div class="col-md-12" *ngIf="locationData">

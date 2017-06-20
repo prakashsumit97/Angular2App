@@ -10,12 +10,13 @@ import { AppConfig } from './app.config';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService } from './_services/index';
+import { AlertService, AuthenticationService, UserService,LocationService } from './_services/index';
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { HeaderComponent } from './header/header';
 import { FooterComponent } from './footer/footer';
+import { AllLocationComponent } from './allLocation/allLocation';
 import { SearchLocationComponent } from './searchLocation/searchLocation';
 
 @NgModule({
@@ -38,14 +39,16 @@ import { SearchLocationComponent } from './searchLocation/searchLocation';
         RegisterComponent,
         HeaderComponent,
         FooterComponent,
-        SearchLocationComponent
+        SearchLocationComponent,
+        AllLocationComponent
     ],
     providers: [
         AppConfig,
         AuthGuard,
         AlertService,
         AuthenticationService,
-        UserService
+        UserService,
+        LocationService
     ],
     bootstrap: [AppComponent]
 })

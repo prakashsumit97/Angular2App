@@ -15,8 +15,9 @@ module.exports = router;
 
 function authenticate(req, res) {
     userService.authenticate(req.body.username, req.body.password)
-        .then(function (user) {
+        .then(function(user) {
             if (user) {
+                req.session.loggedInUser = user;
                 // authentication successful
                 res.send(user);
             } else {
@@ -24,61 +25,62 @@ function authenticate(req, res) {
                 res.status(401).send('Username or password is incorrect');
             }
         })
-        .catch(function (err) {
+        .catch(function(err) {
             res.status(400).send(err);
         });
 }
 
 function register(req, res) {
     userService.create(req.body)
-        .then(function () {
+        .then(function() {
             res.sendStatus(200);
         })
-        .catch(function (err) {
+        .catch(function(err) {
             res.status(400).send(err);
         });
 }
 
 function getAll(req, res) {
+    console.log(req.session);
     userService.getAll()
-        .then(function (users) {
+        .then(function(users) {
             res.send(users);
         })
-        .catch(function (err) {
+        .catch(function(err) {
             res.status(400).send(err);
         });
 }
 
 function getCurrent(req, res) {
     userService.getById(req.user.sub)
-        .then(function (user) {
+        .then(function(user) {
             if (user) {
                 res.send(user);
             } else {
                 res.sendStatus(404);
             }
         })
-        .catch(function (err) {
+        .catch(function(err) {
             res.status(400).send(err);
         });
 }
 
 function update(req, res) {
     userService.update(req.params._id, req.body)
-        .then(function () {
+        .then(function() {
             res.sendStatus(200);
         })
-        .catch(function (err) {
+        .catch(function(err) {
             res.status(400).send(err);
         });
 }
 
 function _delete(req, res) {
     userService.delete(req.params._id)
-        .then(function () {
+        .then(function() {
             res.sendStatus(200);
         })
-        .catch(function (err) {
+        .catch(function(err) {
             res.status(400).send(err);
         });
 }

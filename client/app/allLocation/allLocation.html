@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <h3><b>All Location Search by the User</b></h3>
+    </div>
+    <div class="row">
+        <table class="table table-hover table-striped table-bordered">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>#</th>
+                    <th>Address</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Searched On</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let location of allLocationData; let i = index">
+                    <!--<th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>-->
+                    <td>{{i+1}}</td>
+                    <td>{{location.address}}</td>
+                    <td>{{location.latitude}}</td>
+                    <td>{{location.longitude}}</td>
+                    <td>{{location.search_At|date:'dd-MM-yyyy hh:mm'}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+<div class="row footer">
+    <app-footer></app-footer>
+</div>

@@ -10,18 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
 var core_2 = require("angular2-google-maps/core");
+var index_1 = require("../_services/index");
 var SearchLocationComponent = (function () {
-    function SearchLocationComponent(mapsAPILoader, ngZone, searchElementRef) {
+    function SearchLocationComponent(mapsAPILoader, ngZone, searchElementRef, router, userService, alertService, locationService) {
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
         this.searchElementRef = searchElementRef;
+        this.router = router;
+        this.userService = userService;
+        this.alertService = alertService;
+        this.locationService = locationService;
         this.model = {};
         this.title = 'My first angular2-google-maps project';
     }
     SearchLocationComponent.prototype.saveSearch = function () {
-        console.log('hello');
+        this.locationService.saveLocation(this.locationData)
+            .subscribe(function (data) {
+            //this.alertService.success('Registration successful', true);
+            //this.router.navigate(['/login']);
+        }, function (error) {
+            //this.alertService.error(error._body);
+        });
     };
     SearchLocationComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -74,7 +86,11 @@ SearchLocationComponent = __decorate([
     }),
     __metadata("design:paramtypes", [core_2.MapsAPILoader,
         core_1.NgZone,
-        core_1.ElementRef])
+        core_1.ElementRef,
+        router_1.Router,
+        index_1.UserService,
+        index_1.AlertService,
+        index_1.LocationService])
 ], SearchLocationComponent);
 exports.SearchLocationComponent = SearchLocationComponent;
 // import { Component, NgModule, NgZone, OnInit, ViewChild,ElementRef } from '@angular/core';
