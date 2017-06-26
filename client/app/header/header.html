@@ -4,9 +4,11 @@
             <a class="navbar-brand" href="#">Go to Home</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="searchLocation">Search Location</a></li>
-            <li><a href="allLocation">Show All Location</a></li>
+            <li [routerLinkActive]="['active']"><a [routerLink]="['/']">Home</a></li>
+            <li [routerLinkActive]="['active']"><a [routerLink]="['/searchLocation']">Search Location</a></li>
+            <li [routerLinkActive]="['active']"><a [routerLink]="['/allLocation']">Show All Location</a></li>
+            <!--<li class="active"><a href="#">Home</a></li>  <li><a [routerLink]="['/searchLocation']" href="searchLocation">Search Location</a></li>
+            <li><a [routerLink]="['/allLocation']" href="allLocation">Show All Location</a></li>-->
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">

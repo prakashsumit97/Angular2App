@@ -29,23 +29,10 @@ export class SearchLocationComponent implements OnInit {
     private router: Router,
     private userService: UserService,
     private alertService: AlertService,
-     private locationService: LocationService
-  ) { }
+    private locationService: LocationService,
+   ) { }
 
 
-
-
-  saveSearch() {
-    this.locationService.saveLocation(this.locationData)
-      .subscribe(
-      data => {
-       //this.alertService.success('Registration successful', true);
-        //this.router.navigate(['/login']);
-      },
-      error => {
-        //this.alertService.error(error._body);
-      });
-  }
 
   ngOnInit() {
     //set google maps defaults
@@ -61,12 +48,20 @@ export class SearchLocationComponent implements OnInit {
 
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
-      let autocomplete = new google.maps.places.Autocomplete(document.getElementById('auto'));
+      let autocomplete = new google.maps.places.Autocomplete(<HTMLInputElement>document.getElementById('auto'));
       autocomplete.addListener("place_changed", () => {
         this.ngZone.run(() => {
           //get the place result
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-          console.log(place);
+          this.locationService.saveLocation(place)
+            .subscribe(
+            data => {
+              //this.alertService.success('Registration successful', true);
+              //this.router.navigate(['/login']);
+            },
+            error => {
+              //this.alertService.error(error._body);
+            });
           this.locationData = place;
           //this.locationData=JSON.parse(this.locationData);
           //verify result
@@ -82,7 +77,14 @@ export class SearchLocationComponent implements OnInit {
       });
     });
 
+    
+
+
+
+
   }
+  
+  
 
 
   private setCurrentPosition() {

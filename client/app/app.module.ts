@@ -10,7 +10,7 @@ import { AppConfig } from './app.config';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService,LocationService } from './_services/index';
+import { AlertService, AuthenticationService, UserService,LocationService,PagerService } from './_services/index';
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
@@ -48,7 +48,8 @@ import { SearchLocationComponent } from './searchLocation/searchLocation';
         AlertService,
         AuthenticationService,
         UserService,
-        LocationService
+        LocationService,
+        PagerService
     ],
     bootstrap: [AppComponent]
 })

@@ -15,15 +15,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let location of allLocationData; let i = index">
+                <tr *ngFor="let location of pagedItems; let i = index">
                     <!--<th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>-->
-                    <td>{{i+1}}</td>
+                    <td>{{(pager.currentPage-1)*10+i+1}}</td>
                     <td>{{location.address}}</td>
-                    <td>{{location.latitude}}</td>
-                    <td>{{location.longitude}}</td>
+                    <td>{{location.latitude|number:'1.2-2'}}</td>
+                    <td>{{location.longitude|number:'1.2-2'}}</td>
                     <td>{{location.search_At|date:'dd-MM-yyyy hh:mm'}}</td>
                 </tr>
 
@@ -32,6 +32,44 @@
 
     </div>
 
+</div>
+<div>
+    <div class="container">
+        <div class="text-center">
+            <!--<h1>Angular 2 - Pagination Example with logic like Google</h1>-->
+
+            <!-- items being paged -->
+            <div *ngFor="let item of pagedItems">{{item.name}}</div>
+
+            <!-- pager -->
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <!--<div class="credits text-center">
+        <p>
+            <a href="http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google" target="_top">Angular 2 - Pagination Example with logic like Google</a>
+        </p>
+        <p>
+            <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
+        </p>
+    </div>-->
 </div>
 <div class="row footer">
     <app-footer></app-footer>

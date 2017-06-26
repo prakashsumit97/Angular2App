@@ -32,6 +32,29 @@ a {
 }
 
 .footer {
+    /*position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: #ccc;*/
+    width: 100%;
+    background-color: #ccc;
+    position: relative;
+    margin: auto;
+    min-height: 100px;
+    z-index: 15;
+    /*height: 2em;
+    position: relative;
+    bottom: 0;
+    z-index: 1;
+    background: #ccc;*/
+    /*position: fixed;
+    bottom: 0;
+    left: 0;*/
+}
+
+.footerr {
     position: absolute;
     bottom: 0;
     left: 0;

@@ -26,15 +26,6 @@ var SearchLocationComponent = (function () {
         this.model = {};
         this.title = 'My first angular2-google-maps project';
     }
-    SearchLocationComponent.prototype.saveSearch = function () {
-        this.locationService.saveLocation(this.locationData)
-            .subscribe(function (data) {
-            //this.alertService.success('Registration successful', true);
-            //this.router.navigate(['/login']);
-        }, function (error) {
-            //this.alertService.error(error._body);
-        });
-    };
     SearchLocationComponent.prototype.ngOnInit = function () {
         var _this = this;
         //set google maps defaults
@@ -52,7 +43,13 @@ var SearchLocationComponent = (function () {
                 _this.ngZone.run(function () {
                     //get the place result
                     var place = autocomplete.getPlace();
-                    console.log(place);
+                    _this.locationService.saveLocation(place)
+                        .subscribe(function (data) {
+                        //this.alertService.success('Registration successful', true);
+                        //this.router.navigate(['/login']);
+                    }, function (error) {
+                        //this.alertService.error(error._body);
+                    });
                     _this.locationData = place;
                     //this.locationData=JSON.parse(this.locationData);
                     //verify result

@@ -78,7 +78,7 @@ function allLocation(id) {
 function saveLocation(locationData) {
     var deferred = Q.defer();
     var locationParam = locationData.location;
-    var locationData = {
+    var locationNewData = {
         address: locationParam.formatted_address,
         latitude: (locationParam.geometry.location.lat) ? locationParam.geometry.location.lat : '',
         longitude: locationParam.geometry.location.lng ? locationParam.geometry.location.lng : '',
@@ -87,7 +87,7 @@ function saveLocation(locationData) {
         user: locationData.user._id
     };
     db.locations.insert(
-        locationData,
+        locationNewData,
         function(err, doc) {
             if (err) deferred.reject(err.name + ': ' + err.message);
 

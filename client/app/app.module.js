@@ -59,7 +59,8 @@ AppModule = __decorate([
             index_3.AlertService,
             index_3.AuthenticationService,
             index_3.UserService,
-            index_3.LocationService
+            index_3.LocationService,
+            index_3.PagerService
         ],
         bootstrap: [app_component_1.AppComponent]
     })

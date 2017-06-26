@@ -19,7 +19,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <h3><b>Enter the Location you want to search</b></h3>
-                        <input id="auto" placeholder="search for location" autocorrect="off" (change)="saveSearch(location)" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+                        <input id="auto" placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
                     </div>
                 </div>
                 <div class="col-md-12" *ngIf="locationData">
@@ -61,7 +61,7 @@
 
                 </div>
                 <div class="row" *ngIf="!locationData">
-                    No Location Selected
+                    <p class="text-center text-danger"> <b>No Location Selected</b></p>
                 </div>
             </div>
 
@@ -71,33 +71,34 @@
 </div>
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<!--<div class="row">
-    <div class="col-md-6">
-        <sebm-google-map [latitude]="lat" [longitude]="lng">
-            <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+<!--<div class=" row ">
+    <div class="col-md-6 ">
+        <sebm-google-map [latitude]="lat " [longitude]="lng ">
+            <sebm-google-map-marker [latitude]="lat " [longitude]="lng "></sebm-google-map-marker>
         </sebm-google-map>
     </div>
-    <div class="col-md-6">
-        <div class="row">
+    <div class="col-md-6 ">
+        <div class="row ">
             <h4>Enter the Location you want to search</h4>
-            <div class="form-group">
+            <div class="form-group ">
             </div>
         </div>
-        <div id="map"></div>
-        <div class="row">
-            <div class="col-md-6">Hello</div>
-            <div class="col-md-6">Hello</div>
+        <div id="map "></div>
+        <div class="row ">
+            <div class="col-md-6 ">Hello</div>
+            <div class="col-md-6 ">Hello</div>
         </div>
     </div>
 
 </div>
-<div class="container">
+<div class="container ">
     <h1>Angular 2 + Google Maps Places Autocomplete</h1>
-    <div class="form-group">
-        <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+    <div class="form-group ">
+        <input placeholder="search for location " autocorrect="off " autocapitalize="off " spellcheck="off " type="text " class="form-control " #search [formControl]="searchControl ">
     </div>
-    <sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-        <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude"></sebm-google-map-marker>
+    <sebm-google-map [latitude]="latitude " [longitude]="longitude " [scrollwheel]="false " [zoom]="zoom ">
+        <sebm-google-map-marker [latitude]="latitude " [longitude]="longitude "></sebm-google-map-marker>
     </sebm-google-map>
 </div>-->
+
 <app-footer class="row footer"></app-footer>
