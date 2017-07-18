@@ -33,11 +33,11 @@ var AuthenticationService = (function () {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     };
+    AuthenticationService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http, app_config_1.AppConfig])
+    ], AuthenticationService);
     return AuthenticationService;
 }());
-AuthenticationService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, app_config_1.AppConfig])
-], AuthenticationService);
 exports.AuthenticationService = AuthenticationService;
 //# sourceMappingURL=authentication.service.js.map

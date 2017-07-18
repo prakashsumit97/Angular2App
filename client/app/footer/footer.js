@@ -10,13 +10,13 @@ var core_1 = require("@angular/core");
 var FooterComponent = (function () {
     function FooterComponent() {
     }
+    FooterComponent = __decorate([
+        core_1.Component({
+            selector: 'app-footer',
+            templateUrl: './app/footer/footer.html',
+        })
+    ], FooterComponent);
     return FooterComponent;
 }());
-FooterComponent = __decorate([
-    core_1.Component({
-        selector: 'app-footer',
-        templateUrl: './app/footer/footer.html',
-    })
-], FooterComponent);
 exports.FooterComponent = FooterComponent;
 //# sourceMappingURL=footer.js.map
