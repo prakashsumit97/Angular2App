@@ -27,43 +27,43 @@ var searchLocation_1 = require("./searchLocation/searchLocation");
 var AppModule = (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                forms_1.ReactiveFormsModule,
+                http_1.HttpModule,
+                app_routing_1.routing,
+                core_2.AgmCoreModule.forRoot({
+                    apiKey: 'AIzaSyDWGiaNqmGsVs9Zp1WRTRn4Jldjt_AT1d0',
+                    libraries: ["places"]
+                }),
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                index_1.AlertComponent,
+                index_4.HomeComponent,
+                index_5.LoginComponent,
+                index_6.RegisterComponent,
+                header_1.HeaderComponent,
+                footer_1.FooterComponent,
+                searchLocation_1.SearchLocationComponent,
+                allLocation_1.AllLocationComponent
+            ],
+            providers: [
+                app_config_1.AppConfig,
+                index_2.AuthGuard,
+                index_3.AlertService,
+                index_3.AuthenticationService,
+                index_3.UserService,
+                index_3.LocationService,
+                index_3.PagerService
+            ],
+            bootstrap: [app_component_1.AppComponent]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            forms_1.FormsModule,
-            forms_1.ReactiveFormsModule,
-            http_1.HttpModule,
-            app_routing_1.routing,
-            core_2.AgmCoreModule.forRoot({
-                apiKey: 'AIzaSyDWGiaNqmGsVs9Zp1WRTRn4Jldjt_AT1d0',
-                libraries: ["places"]
-            }),
-        ],
-        declarations: [
-            app_component_1.AppComponent,
-            index_1.AlertComponent,
-            index_4.HomeComponent,
-            index_5.LoginComponent,
-            index_6.RegisterComponent,
-            header_1.HeaderComponent,
-            footer_1.FooterComponent,
-            searchLocation_1.SearchLocationComponent,
-            allLocation_1.AllLocationComponent
-        ],
-        providers: [
-            app_config_1.AppConfig,
-            index_2.AuthGuard,
-            index_3.AlertService,
-            index_3.AuthenticationService,
-            index_3.UserService,
-            index_3.LocationService,
-            index_3.PagerService
-        ],
-        bootstrap: [app_component_1.AppComponent]
-    })
-], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

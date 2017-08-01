@@ -32,16 +32,16 @@ var RegisterComponent = (function () {
             _this.loading = false;
         });
     };
+    RegisterComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            templateUrl: 'register.component.html'
+        }),
+        __metadata("design:paramtypes", [router_1.Router,
+            index_1.UserService,
+            index_1.AlertService])
+    ], RegisterComponent);
     return RegisterComponent;
 }());
-RegisterComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: 'register.component.html'
-    }),
-    __metadata("design:paramtypes", [router_1.Router,
-        index_1.UserService,
-        index_1.AlertService])
-], RegisterComponent);
 exports.RegisterComponent = RegisterComponent;
 //# sourceMappingURL=register.component.js.map

@@ -28,14 +28,14 @@ var HomeComponent = (function () {
         var _this = this;
         this.userService.getAll().subscribe(function (users) { _this.users = users; });
     };
+    HomeComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            templateUrl: "home.component.html",
+        }),
+        __metadata("design:paramtypes", [index_1.UserService])
+    ], HomeComponent);
     return HomeComponent;
 }());
-HomeComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: "home.component.html",
-    }),
-    __metadata("design:paramtypes", [index_1.UserService])
-], HomeComponent);
 exports.HomeComponent = HomeComponent;
 //# sourceMappingURL=home.component.js.map

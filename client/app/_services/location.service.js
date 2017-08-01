@@ -48,11 +48,11 @@ var LocationService = (function () {
             return new http_1.RequestOptions({ headers: headers });
         }
     };
+    LocationService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http, app_config_1.AppConfig])
+    ], LocationService);
     return LocationService;
 }());
-LocationService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, app_config_1.AppConfig])
-], LocationService);
 exports.LocationService = LocationService;
 //# sourceMappingURL=location.service.js.map

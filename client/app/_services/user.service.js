@@ -41,11 +41,11 @@ var UserService = (function () {
             return new http_1.RequestOptions({ headers: headers });
         }
     };
+    UserService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http, app_config_1.AppConfig])
+    ], UserService);
     return UserService;
 }());
-UserService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, app_config_1.AppConfig])
-], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

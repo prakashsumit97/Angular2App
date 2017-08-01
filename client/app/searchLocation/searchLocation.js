@@ -74,21 +74,21 @@ var SearchLocationComponent = (function () {
             });
         }
     };
+    SearchLocationComponent = __decorate([
+        core_1.Component({
+            selector: 'app-search-location',
+            templateUrl: "./app/searchLocation/searchLocation.html",
+        }),
+        __metadata("design:paramtypes", [core_2.MapsAPILoader,
+            core_1.NgZone,
+            core_1.ElementRef,
+            router_1.Router,
+            index_1.UserService,
+            index_1.AlertService,
+            index_1.LocationService])
+    ], SearchLocationComponent);
     return SearchLocationComponent;
 }());
-SearchLocationComponent = __decorate([
-    core_1.Component({
-        selector: 'app-search-location',
-        templateUrl: "./app/searchLocation/searchLocation.html",
-    }),
-    __metadata("design:paramtypes", [core_2.MapsAPILoader,
-        core_1.NgZone,
-        core_1.ElementRef,
-        router_1.Router,
-        index_1.UserService,
-        index_1.AlertService,
-        index_1.LocationService])
-], SearchLocationComponent);
 exports.SearchLocationComponent = SearchLocationComponent;
 // import { Component, NgModule, NgZone, OnInit, ViewChild,ElementRef } from '@angular/core';
 // import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";

@@ -18,14 +18,14 @@ var HeaderComponent = (function () {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.username = this.currentUser.username;
     }
+    HeaderComponent = __decorate([
+        core_1.Component({
+            selector: 'app-header',
+            templateUrl: "./app/header/header.html",
+        }),
+        __metadata("design:paramtypes", [index_1.UserService])
+    ], HeaderComponent);
     return HeaderComponent;
 }());
-HeaderComponent = __decorate([
-    core_1.Component({
-        selector: 'app-header',
-        templateUrl: "./app/header/header.html",
-    }),
-    __metadata("design:paramtypes", [index_1.UserService])
-], HeaderComponent);
 exports.HeaderComponent = HeaderComponent;
 //# sourceMappingURL=header.js.map

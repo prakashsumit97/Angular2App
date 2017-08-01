@@ -61,18 +61,18 @@ var AllLocationComponent = (function () {
         this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
         console.log(this.pagedItems);
     };
+    AllLocationComponent = __decorate([
+        core_1.Component({
+            selector: 'app-Location',
+            templateUrl: './app/allLocation/allLocation.html',
+        }),
+        __metadata("design:paramtypes", [index_1.UserService,
+            index_1.AlertService,
+            index_1.LocationService,
+            http_1.Http,
+            index_2.PagerService])
+    ], AllLocationComponent);
     return AllLocationComponent;
 }());
-AllLocationComponent = __decorate([
-    core_1.Component({
-        selector: 'app-Location',
-        templateUrl: './app/allLocation/allLocation.html',
-    }),
-    __metadata("design:paramtypes", [index_1.UserService,
-        index_1.AlertService,
-        index_1.LocationService,
-        http_1.Http,
-        index_2.PagerService])
-], AllLocationComponent);
 exports.AllLocationComponent = AllLocationComponent;
 //# sourceMappingURL=allLocation.js.map
